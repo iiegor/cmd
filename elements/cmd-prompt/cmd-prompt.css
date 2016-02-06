@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  padding-left: 1px;
+}
+
+.user-name {
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+.dir-name {
+  color: #FBC02D;
+}
+
+.prompt-input {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.label {
+  display: inline-block;
+  margin-right: 2px;
+  color: #fff;
+}
+
+#input {
+  display: inline-block;
+  font-size: 16px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  color: #fff;
+  height: 20px;
+}

@@ -5,6 +5,9 @@
     
     <!-- Polymer imports -->
     <script>Polymer = {dom: 'shadow'};</script>
+    <link rel="import" href="elements/cmd-titlebar/cmd-titlebar.html">
+    <link rel="import" href="elements/cmd-content/cmd-content.html">
+    <link rel="import" href="elements/cmd-prompt/cmd-prompt.html">
   
     <!-- Native styles -->
     <link rel="stylesheet" href="chrome://resources/css/text_defaults.css">
@@ -16,6 +19,9 @@
   </head>
 
   <body>
-    Hello world!
+    <cmd-titlebar></cmd-titlebar>
+    <cmd-content>
+      <cmd-prompt></cmd-prompt>
+    </cmd-content>
   </body>
 </html>

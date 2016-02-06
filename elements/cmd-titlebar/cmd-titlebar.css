@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  background-color: #212121;
+  color: #9E9E9E;
+  -webkit-app-region: drag;
+}
+
+#content {
+  padding: 0 5px;
+}
+
+.controls {
+  color: #FFC400;
+  -webkit-app-region: no-drag;
+}
+
+.controls span.text {
+  vertical-align: middle;
+}

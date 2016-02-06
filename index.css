@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  background-color: rgb(245, 245, 245);
+  background-color: #424242;
   
   font-family: 'Roboto', 'Droid Sans', arial, sans-serif;
   font-size: 15px;
@@ -18,32 +18,6 @@ body {
   -webkit-user-select: none;
 }
 
-/* NOTE: Maybe there is a better way? */
-body.blur browser-topbar {
-  background-color: #E9E9E9;
-}
-
-body.blur browser-topbar::shadow iron-icon {
-  color: #BABABA;
-}
-
-body.win32 browser-topbar {
-  flex-direction: row-reverse;
-}
-
-body.win32 browser-topbar::shadow iron-icon:not(:first-of-type) {
-  margin-left: 0;
-  margin-right: -2px;
-}
-
-body.fullscreen browser-topbar,
-body.fullscreen browser-header,
-body.fullscreen browser-content::shadow nav {
-  display: none;
-}
-
-body.fullscreen browser-content::shadow iron-pages div.iron-selected #view {
-  position: fixed;
-  height: 100%;
-  width: 100%;
+body.blur {
+  // ...
 }
