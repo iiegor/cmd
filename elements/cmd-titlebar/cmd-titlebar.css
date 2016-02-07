@@ -5,7 +5,7 @@
   height: 30px;
   background-color: #2D2D2D;
   color: #9E9E9E;
-  z-index: 1;
+  z-index: 2;
   -webkit-app-region: drag;
 }
 
@@ -16,6 +16,7 @@
 
 .controls,
 .more {
+  z-index: 1;
   position: absolute;
   height: inherit;
   align-items: center;
@@ -34,6 +35,8 @@
 .more paper-menu-button paper-icon-button {
   cursor: default;
   padding: 2px;
+
+  --paper-icon-button-ink-color: #D4D4D4;
 }
 
 .more paper-menu-button::shadow iron-dropdown {
@@ -60,12 +63,12 @@
   border: 1px solid #D63540;
 }
 
-.resize {
+.minimize {
   background-color: #F9C536;
   border: 1px solid #DAA41F;
 }
 
-.minimize {
+.resize {
   background-color: #39E949;
   border: 1px solid #21C72E;
 }

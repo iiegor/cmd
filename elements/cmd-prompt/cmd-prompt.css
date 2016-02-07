@@ -2,9 +2,6 @@
   display: block;
   padding-left: 1px;
   color: #DCDCDC;
-
-  --iron-icon-height: 18px;
-  --iron-icon-width: 18px;
 }
 
 .user-name {
@@ -29,17 +26,21 @@
 .git {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: .8px
+  display: inline-flex;
+  flex: 1 0 auto;
+  letter-spacing: .8px;
 }
 
 .prompt-input {
-  display: inline-block;
+  display: flex;
   width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
 #input {
-  display: inline-block;
+  display: inline-flex;
   font-size: 14px;
   border: 0;
   background: transparent;
@@ -50,5 +51,14 @@
 }
 
 iron-icon[icon="arrow-forward"] {
+  display: inline-flex;
   color: #8AE234;
+  height: 23px;
+  width: 23px;
+}
+
+.dir-name,
+.git,
+iron-icon[icon="arrow-forward"] {
+  margin-right: 7px;
 }

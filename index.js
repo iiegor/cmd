@@ -5,7 +5,7 @@
   window.onload = function() {
     document.body.classList.add(process.platform);
   }
-  
+
   function init() {
     process.versions.app = package.version;
 

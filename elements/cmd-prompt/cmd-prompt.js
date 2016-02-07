@@ -23,6 +23,8 @@ var pty = null;
 
       term.on('data', (data) => {
         document.querySelector('cmd-content').$.content.innerHTML += data.toString();
+
+        console.log(data.toString('utf8'))
       });
 
       this.$.input.value = '';
