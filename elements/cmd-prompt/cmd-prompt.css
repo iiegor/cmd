@@ -16,13 +16,17 @@
   color: #32DFE2;
 }
 
-.branch-name {
+.git {
   color: #729FCF;
+}
+
+.branch-status {
+  color: #EF2929;
 }
 
 .user-name,
 .dir-name,
-.branch-name {
+.git {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: .8px
