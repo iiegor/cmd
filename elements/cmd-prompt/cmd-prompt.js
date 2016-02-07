@@ -22,9 +22,9 @@ var pty = null;
       });
 
       term.on('data', (data) => {
-        document.querySelector('cmd-content').$.content.innerHTML += data.toString();
-
-        console.log(data.toString('utf8'))
+        console.log('-> ' + data);
+        
+        document.querySelector('cmd-content').$.content.innerHTML += data;
       });
 
       this.$.input.value = '';
