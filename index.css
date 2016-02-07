@@ -19,6 +19,7 @@ body {
   -webkit-user-select: none;
 }
 
-body.blur {
-  // ...
+body.blur cmd-titlebar::shadow .icon {
+  background-color: #C8C8C8;
+  border-color: #BEBEBE;
 }

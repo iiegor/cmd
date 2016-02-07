@@ -14,8 +14,39 @@
 
 <script type="text/javascript">
 (() => {
+  const remote = require('electron').remote;
+  const Menu = remote.Menu;
+  const MenuItem = remote.MenuItem;
+
+  var menu = null;
+
   Polymer({
-    is: 'cmd-content'
+    is: 'cmd-content',
+
+    ready() {
+      this.addEventListener('contextmenu', this._handleContextMenu, false);
+    },
+
+    _handleContextMenu(evt) {
+      evt.preventDefault();
+
+      if (!menu) {
+        var menu = new Menu();
+        menu.append(new MenuItem({ label: 'Open Terminal', click: function() { console.log('item 1 clicked'); } }));
+        menu.append(new MenuItem({ label: 'Open Tab', click: function() { console.log('item 2 clicked'); } }));
+        menu.append(new MenuItem({ type: 'separator' }));
+        menu.append(new MenuItem({ label: 'Copy', click: function() { console.log('item 3 clicked'); } }));
+        menu.append(new MenuItem({ label: 'Paste', click: function() { console.log('item 4 clicked'); } }));
+        menu.append(new MenuItem({ type: 'separator' }));
+        menu.append(new MenuItem({ label: 'Profiles', submenu: [
+          new MenuItem({ label: 'Default', type: 'checkbox', checked: true }),
+          new MenuItem({ type: 'separator' }),
+          new MenuItem({ label: 'Profile Preferences' })
+        ] }));
+      }
+
+      menu.popup(remote.getCurrentWindow());
+    }
   });
 })();
 </script>
