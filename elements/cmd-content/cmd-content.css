@@ -2,5 +2,21 @@
   display: block;
   position: absolute;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 55px;
 }
+
+#content {
+  padding: 2px 3px 0 3px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+/*
+#content::-webkit-scrollbar {
+  width: 4px;
+}
+ 
+#content::-webkit-scrollbar-thumb {
+  background-color: #7A7D81;
+}
+*/

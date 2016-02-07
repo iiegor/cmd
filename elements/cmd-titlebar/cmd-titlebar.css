@@ -1,23 +1,82 @@
 :host {
-  display: flex;
-  align-items: center;
+  display: block;
   position: fixed;
   width: 100%;
   height: 30px;
-  background-color: #212121;
+  background-color: #2D2D2D;
   color: #9E9E9E;
+  z-index: 1;
   -webkit-app-region: drag;
 }
 
 #content {
   padding: 0 5px;
+  height: inherit;
 }
 
-.controls {
-  color: #FFC400;
+.controls,
+.more {
+  position: absolute;
+  height: inherit;
+  align-items: center;
+  display: flex;
   -webkit-app-region: no-drag;
+}
+
+.more {
+  right: 0;
+}
+
+.more paper-menu-button {
+  padding: 0;
+}
+
+.more paper-menu-button paper-icon-button {
+  cursor: default;
+  padding: 2px;
+}
+
+.more paper-menu-button::shadow iron-dropdown {
+  margin: 5px;
 }
 
 .controls span.text {
   vertical-align: middle;
+}
+
+.icon {
+  display: inline-flex;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+
+.icon:not(:first-child) {
+  margin-left: 5px;
+}
+
+.close {
+  background-color: #F15056;
+  border: 1px solid #D63540;
+}
+
+.resize {
+  background-color: #F9C536;
+  border: 1px solid #DAA41F;
+}
+
+.minimize {
+  background-color: #39E949;
+  border: 1px solid #21C72E;
+}
+
+.title {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
+  color: #CBCBCB;
+  font-weight: 500;
 }

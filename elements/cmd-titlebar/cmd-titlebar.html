@@ -1,13 +1,32 @@
 <link rel="import" href="chrome://resources/polymer/v1_0/polymer/polymer.html">
 <link rel="import" href="chrome://resources/polymer/v1_0/iron-icons/iron-icons.html">
+<link rel="import" href="chrome://resources/polymer/v1_0/iron-icon/iron-icon.html">
+<link rel="import" href="chrome://resources/polymer/v1_0/paper-item/paper-item.html">
+<link rel="import" href="chrome://resources/polymer/v1_0/paper-menu/paper-menu.html">
+<link rel="import" href="chrome://resources/polymer/v1_0/paper-menu-button/paper-menu-button.html">
 
 <dom-module id="cmd-titlebar">
   <link rel="import" type="css" href="cmd-titlebar.css">
 
   <template>
     <div id="content">
-      <div class="controls" style="float: right">
-        <iron-icon icon="warning"></iron-icon> <span class="text"></span>
+      <div class="controls">
+        <div class="icon close" on-click="onClose"></div>
+        <div class="icon resize" on-click="onResize"></div>
+        <div class="icon minimize" on-click="onMinimize"></div>
+      </div>
+
+      <span class="title">iegor@iegor: ~/Desktop/xat-server</span>
+
+      <div class="more">
+        <paper-menu-button horizontal-align="right">
+          <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+
+          <paper-menu class="dropdown-content">
+            <paper-item>run</paper-item>
+            <paper-item>test</paper-item>
+          </paper-menu>
+        </paper-menu-button>
       </div>
     </div>
   </template>
@@ -15,8 +34,27 @@
 
 <script type="text/javascript">
 (() => {
+  const remote = require('electron').remote;
+  const BrowserWindow = remote.getCurrentWindow();
+
   Polymer({
-    is: 'cmd-titlebar'
+    is: 'cmd-titlebar',
+
+    onClose() {
+      remote.app.quit();
+    },
+
+    onResize() {
+      if (!BrowserWindow.isMaximized()) {
+        BrowserWindow.maximize();
+      } else {
+        BrowserWindow.restore();
+      }
+    },
+
+    onMinimize() {
+      BrowserWindow.minimize();
+    }
   });
 })();
 </script>

@@ -1,7 +1,6 @@
 (() => {
   const package = require('./package.json');
   const ipc = require('electron').ipcRenderer;
-  const pty = require('ptyw.js');
 
   window.onload = function() {
     document.body.classList.add(process.platform);

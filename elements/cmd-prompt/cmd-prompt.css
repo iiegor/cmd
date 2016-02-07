@@ -1,6 +1,10 @@
 :host {
   display: block;
   padding-left: 1px;
+  color: #DCDCDC;
+
+  --iron-icon-height: 18px;
+  --iron-icon-width: 18px;
 }
 
 .user-name {
@@ -9,28 +13,38 @@
 }
 
 .dir-name {
-  color: #FBC02D;
+  color: #32DFE2;
+}
+
+.branch-name {
+  color: #729FCF;
+}
+
+.user-name,
+.dir-name,
+.branch-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .8px
 }
 
 .prompt-input {
-  display: flex;
+  display: inline-block;
   width: 100%;
   align-items: center;
 }
 
-.label {
-  display: inline-block;
-  margin-right: 2px;
-  color: #fff;
-}
-
 #input {
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   border: 0;
   background: transparent;
   outline: none;
   width: 100%;
-  color: #fff;
+  color: #DCDCDC;
   height: 20px;
+}
+
+iron-icon[icon="arrow-forward"] {
+  color: #8AE234;
 }

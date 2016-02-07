@@ -1,13 +1,14 @@
 <link rel="import" href="chrome://resources/polymer/v1_0/polymer/polymer.html">
+<link rel="import" href="chrome://resources/polymer/v1_0/iron-icon/iron-icon.html">
 
 <dom-module id="cmd-prompt">
   <link rel="import" type="css" href="cmd-prompt.css">
 
   <template>
-    <span class="user-name">Iegor@IEGOR-PC</span> <span class="dir-name">~/desktop/electron (master)</span>
-
     <div class="prompt-input">
-      <label class="label">$</label><input id="input" type="text" on-keydown="_onExecute" />
+      <iron-icon icon="arrow-forward"></iron-icon> <span class="dir-name">xat-server</span> <span class="branch-name">git:(master)</span>
+
+      <input id="input" type="text" on-keydown="_onExecute" />
     </div>
   </template>
 </dom-module>
