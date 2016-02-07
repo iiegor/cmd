@@ -32,6 +32,10 @@
   padding: 0;
 }
 
+.more paper-menu paper-item {
+  min-height: 34px;
+}
+
 .more paper-menu-button paper-icon-button {
   cursor: default;
   padding: 2px;

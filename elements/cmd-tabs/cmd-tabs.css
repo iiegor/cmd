@@ -35,5 +35,9 @@
 }
 
 #tabs paper-tab.iron-selected {
-  background-color: #F9F9F9
+  background-color: #F9F9F9;
+}
+
+#tabs paper-tab iron-icon[icon="close"]:hover {
+  color: #2D2D2D;
 }
