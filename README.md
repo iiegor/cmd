@@ -1,6 +1,6 @@
 # cmd
 <div align="center">
-  <img src="http://i.imgur.com/ABf4oiW.png">
+  <img src="http://i.imgur.com/XT2W252.png">
 </div>
 
 ## Supported platforms
