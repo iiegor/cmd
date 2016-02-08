@@ -36,7 +36,19 @@ var child_process = require('child_process');
         pty = require('ptyw.js');
       }*/
 
-      const args = ['/s', '/c', '"' + this.$.input.value + '"'];
+      var command = this.cmdPath;
+      var args = ['/s', '/c', '"' + this.$.input.value + '"'];
+      var options = {
+        cwd: process.cwd,
+        env: process.env
+      };
+
+      if (process.platform !== 'win32') {
+        command = this.$.input.value;
+        args = [];
+      } else {
+        options.windowsVerbatimArguments = true;
+      }
 
       /*const term = pty.spawn(this.cmdPath, args, {
         name: 'xterm-color',
@@ -46,11 +58,7 @@ var child_process = require('child_process');
         env: process.env
       });*/
 
-      const term = child_process.spawn(this.cmdPath, args, {
-        cwd: process.cwd,
-        env: process.env,
-        windowsVerbatimArguments: true
-      });
+      const term = child_process.spawn(command, args, options);
 
       // Empty prompt input
       //this.$.input.value = '';
