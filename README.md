@@ -1,4 +1,4 @@
-# cmd
+# cmd [![Dependency Status](https://david-dm.org/iiegor/cmd.svg)](https://david-dm.org/iiegor/cmd)
 <div align="center">
   <img src="http://i.imgur.com/XT2W252.png">
 </div>
