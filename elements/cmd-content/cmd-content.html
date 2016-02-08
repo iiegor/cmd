@@ -54,6 +54,10 @@
       setTimeout(() => this.$.content.scrollTop = this.$.content.scrollHeight, 0);
     },
 
+    clearContent() {
+      this.set('history', [{disabled: false}]);
+    },
+
     _handleContextMenu(evt) {
       evt.preventDefault();
 

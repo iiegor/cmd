@@ -28,6 +28,8 @@ var child_process = require('child_process');
         return;
       } else if (this.$.input.value.length < 1) {
         return;
+      } else if (this._isBuiltIn(this.$.input.value)) {
+        return;
       }
 
       /*if (!pty) {
@@ -51,7 +53,7 @@ var child_process = require('child_process');
       });
 
       // Empty prompt input
-      this.$.input.value = '';
+      //this.$.input.value = '';
 
       term.stdout.on('data', this._handleOutput.bind(this));
       term.stderr.on('data', this._handleError.bind(this));
@@ -92,6 +94,17 @@ var child_process = require('child_process');
           console.log('History forward');
           break;
       }
+    },
+
+    _isBuiltIn(command) {
+      var el = document.querySelector('cmd-content');
+
+      if (command === 'clear') {
+        el.clearContent();
+        return true;
+      }
+
+      return false;
     },
 
     get cmdPath() {
