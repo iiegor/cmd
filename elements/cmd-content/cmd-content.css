@@ -7,17 +7,24 @@
 }
 
 #content {
+  margin: 0;
   padding: 2px 3px 0 3px;
   overflow-y: auto;
   word-wrap: break-word;
 }
 
-/*
 #content::-webkit-scrollbar {
   width: 4px;
 }
  
 #content::-webkit-scrollbar-thumb {
-  background-color: #7A7D81;
+  background-color: #535353;
 }
-*/
+
+#content a {
+  color: #94C2E4;
+}
+
+command {
+  display: block;
+}

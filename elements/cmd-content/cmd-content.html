@@ -4,7 +4,7 @@
   <link rel="import" type="css" href="cmd-content.css">
 
   <template>
-    <div id="content"></div>
+    <ul id="content"></ul>
 
     <content></content>
   </template>
@@ -23,6 +23,10 @@
 
     ready() {
       this.addEventListener('contextmenu', this._handleContextMenu, false);
+    },
+
+    appendOutput(data) {
+      this.$.content.innerHTML += "<li>" + data.toString('utf8') + "</li>";
     },
 
     _handleContextMenu(evt) {

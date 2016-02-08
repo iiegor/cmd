@@ -62,3 +62,7 @@ iron-icon[icon="arrow-forward"] {
 iron-icon[icon="arrow-forward"] {
   margin-right: 7px;
 }
+
+iron-icon[icon="arrow-forward"].error {
+  color: red;
+}
