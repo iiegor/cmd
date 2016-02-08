@@ -4,7 +4,15 @@
   <link rel="import" type="css" href="cmd-content.css">
 
   <template>
-    <ul id="content"></ul>
+    <ul id="content">
+      <template is="dom-repeat" items="{{history}}">
+        <li id="{{_historyIndex(index)}}" class="command">
+          <cmd-prompt disabled="{{item.disabled}}"></cmd-prompt>
+
+          <div id="output" class="output">{{item.output}}</div>
+        </li>
+      </template>
+    </ul>
 
     <content></content>
   </template>
@@ -21,12 +29,29 @@
   Polymer({
     is: 'cmd-content',
 
+    properties: {
+      history: {
+        type: Array,
+        value: [],
+        notify: true
+      }
+    },
+
     ready() {
+      this.history = [{disabled: false}];
       this.addEventListener('contextmenu', this._handleContextMenu, false);
     },
 
     appendOutput(data) {
-      this.$.content.innerHTML += "<li>" + data.toString('utf8') + "</li>";
+      // Update latest prompt with the output
+      var index = this.history.length - 1;
+      this.set(`history.${index}`, {disabled: true});
+
+      this.currentPrompt.querySelector('#output').innerHTML = data;
+
+      // Append new prompt and scroll bottom
+      this.push('history', {disabled: false});
+      setTimeout(() => this.$.content.scrollTop = this.$.content.scrollHeight, 0);
     },
 
     _handleContextMenu(evt) {
@@ -48,6 +73,14 @@
       }
 
       menu.popup(remote.getCurrentWindow());
+    },
+
+    _historyIndex(index) {
+      return 'c' + index;
+    },
+
+    get currentPrompt() {
+      return this.$.content.querySelector(`#c${this.history.length - 1}`);
     }
   });
 })();

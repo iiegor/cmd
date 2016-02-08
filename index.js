@@ -23,6 +23,7 @@
     }
 
     buff = escapeHTML(buff.toString()).split('\n');
+
     return buff.join('<br>');
   }
 

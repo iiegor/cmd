@@ -9,7 +9,8 @@
   "electronVersion": "0.36.7",
   "dependencies": {
     "escape-html": "^1.0.3",
-    "ptyw.js": "^0.3.7"
+    "ptyw.js": "^0.3.7",
+    "strip-ansi": "^3.0.0"
   },
   "devDependencies": {
     "electron-packager": "^5.2.0",

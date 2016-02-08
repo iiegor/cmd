@@ -14,15 +14,25 @@ var child_process = require('child_process');
       }
     },
 
+    ready() {
+      if (this.disabled) {
+        this.$.input.classList.add('disabled');
+      } else {
+        setTimeout(() => this.$.input.focus(), 0);
+      }
+    },
+
     _onExecute(evt) {
       if (evt.keyCode !== 13) {
         this._handleKey(evt.keyCode);
         return;
+      } else if (this.$.input.value.length < 1) {
+        return;
       }
 
-      if (!pty) {
+      /*if (!pty) {
         pty = require('ptyw.js');
-      }
+      }*/
 
       const args = ['/s', '/c', '"' + this.$.input.value + '"'];
 
@@ -50,7 +60,7 @@ var child_process = require('child_process');
     },
 
     _handleOutput(data) {
-      this.parentNode.appendOutput(window.escape(window.parse(data)));
+      document.querySelector('cmd-content').appendOutput(window.escape(window.parse(data)));
     },
 
     _handleError(data) {

@@ -9,6 +9,7 @@
 #content {
   margin: 0;
   padding: 2px 3px 0 3px;
+  height: 100%;
   overflow-y: auto;
   word-wrap: break-word;
 }
@@ -25,6 +26,10 @@
   color: #94C2E4;
 }
 
-command {
+#content .command {
   display: block;
+}
+
+#content .output {
+  padding-left: 2px;
 }
