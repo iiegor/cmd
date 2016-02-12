@@ -67,14 +67,26 @@
   border: 1px solid #D63540;
 }
 
+.close:active {
+  background-color: #D63540;
+}
+
 .minimize {
   background-color: #F9C536;
   border: 1px solid #DAA41F;
 }
 
+.minimize:active {
+  background-color: #DAA41F;
+}
+
 .resize {
   background-color: #39E949;
   border: 1px solid #21C72E;
+}
+
+.resize:active {
+  background-color: #21C72E;
 }
 
 .title {
