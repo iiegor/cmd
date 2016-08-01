@@ -60,9 +60,6 @@ var child_process = require('child_process');
 
       const term = child_process.spawn(command, args, options);
 
-      // Empty prompt input
-      //this.$.input.value = '';
-
       term.stdout.on('data', this._handleOutput.bind(this));
       term.stderr.on('data', this._handleError.bind(this));
 
@@ -74,6 +71,9 @@ var child_process = require('child_process');
     },
 
     _handleError(data) {
+      // Empty input
+      this.$.input.value = '';
+
       console.log('error', data.toString('utf8'));
     },
 

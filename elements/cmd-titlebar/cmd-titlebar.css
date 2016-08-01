@@ -38,8 +38,10 @@
 
 .more paper-menu-button paper-icon-button {
   cursor: default;
-  padding: 2px;
 
+  --paper-icon-button: {
+    margin-right: -5px;
+  };
   --paper-icon-button-ink-color: #D4D4D4;
 }
 
